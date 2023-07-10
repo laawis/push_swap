@@ -47,12 +47,12 @@ static int	check_limits(int digit, int res, int sign)
 {
 	if ((INT_MAX / 10 < res * sign) || (INT_MAX - digit < res * 10 * sign))
 	{
-		errno = EOVERFLOW;
+		errno = ERANGE;
 		return (INT_MAX);
 	}
 	if ((INT_MIN / 10 > res * sign) || (INT_MIN + digit > res * 10 * sign))
 	{
-		errno = EOVERFLOW;
+		errno = ERANGE;
 		return (INT_MIN);
 	}
 	return (0);
