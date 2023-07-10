@@ -54,7 +54,7 @@ static int	is_correct_input(char **argv)
 		if (!is_number(argv[i]))
 			return (0);
 		ft_atoi(argv[i]);
-		if (errno == EOVERFLOW)
+		if (errno == ERANGE)
 			return (0);
 		i++;
 	}
